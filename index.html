@@ -1,52 +1,55 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Audiobook Acessível</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>História da Produção Gráfica</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main class="audiobook-container" role="main">
-    <h1 tabindex="0">Audiobook Acessível</h1>
-    <audio id="audio" src="musica.mp3" aria-label="Leitura do texto com áudio"></audio>
-    
-    <div class="controls">
-      <button id="playPause" aria-label="Tocar ou pausar o áudio">▶️</button>
-      <input type="range" id="progress" min="0" max="100" value="0" aria-label="Progresso do áudio">
-      <span id="currentTime" aria-label="Tempo atual">0:00</span> / 
-      <span id="duration" aria-label="Duração total">0:00</span>
-    </div>
 
-    <div class="extra-controls">
-      <label for="speedSelect">Velocidade:</label>
-      <select id="speedSelect" aria-label="Selecionar velocidade de reprodução">
-        <option value="0.75">0.75x</option>
-        <option value="1" selected>1x</option>
-        <option value="1.25">1.25x</option>
-        <option value="1.5">1.5x</option>
-      </select>
-    </div>
+  <header>
+    <h1>História da Produção Gráfica</h1>
+    <p>Uma jornada pela evolução da comunicação visual</p>
+  </header>
 
-    <div class="text-box" id="textContent" tabindex="0" aria-live="polite">
-      <em>Texto narrado será exibido aqui...</em>
-    </div>
+  <main>
+    <section id="playerSection" aria-label="Reprodutor de Audiobook">
+      <audio id="audio" src="Você já parou para p.wav" preload="metadata"></audio>
 
-    <button id="showTranscript" aria-expanded="false" aria-controls="fullTranscript">
-      📄 Ver transcrição completa
-    </button>
+      <div id="controls">
+        <button id="playPause" aria-label="Reproduzir/Pausar">▶️</button>
+        <input type="range" id="progress" value="0" aria-label="Linha do tempo do áudio">
+        <div id="timeInfo">
+          <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+        </div>
+        <label for="speedSelect">Velocidade:</label>
+        <select id="speedSelect">
+          <option value="0.75">0.75x</option>
+          <option value="1" selected>1x</option>
+          <option value="1.25">1.25x</option>
+          <option value="1.5">1.5x</option>
+          <option value="2">2x</option>
+        </select>
+      </div>
 
-    <section class="transcript" id="fullTranscript" hidden tabindex="0">
-      <p>Pelo amor de Deus...</p>
-      <p>Não faz isso comigo não...</p>
-      <p>Não tira eu do grupo...</p>
-      <p>Não faz um grupo sem eu não...</p>
-      <p>(barulhos de choro)</p>
-      <p>Eu carrego...</p>
-      <p>(mais choro)</p>
-      <p>Eu amo esse grupo!</p>
+      <div id="textContent" aria-live="polite"></div>
+
+      <button id="showTranscript" aria-expanded="false" aria-controls="fullTranscript">📄 Ver transcrição completa</button>
+      <section id="fullTranscript" hidden>
+        <p>Você já parou para pensar como aquelas artes incríveis que você vê nos livros, revistas, pôsteres e até nos seus posts favoritos no Instagram surgiram? Acredite, a produção gráfica tem uma história longa, cheia de reviravoltas e algumas ideias bem malucas ao longo do caminho.</p>
+        <p>Imagina viver numa época em que cada livro tinha que ser escrito à mão, letra por letra. Pois é, era isso ou nada. Aí veio um alemão chamado Gutenberg e mudou o jogo com uma invenção que basicamente foi o “Ctrl+C, Ctrl+V” da época: a prensa móvel. A partir daí, a comunicação visual nunca mais foi a mesma.</p>
+        <p>Neste livro, vamos embarcar numa viagem desde os tempos das cavernas, onde nossos ancestrais rabiscavam as primeiras formas de arte, até a era digital, onde você pode criar um design no seu celular e imprimir em qualquer coisa — de camisetas a capas de celular. Vamos falar de tintas, tipos, revoluções tecnológicas e até da ascensão da inteligência artificial na arte.</p>
+        <p>Então, prepare-se para conhecer a história da produção gráfica como você nunca viu antes: sem aquele papo chato de sala de aula mas com muita curiosidade.</p>
+      </section>
     </section>
   </main>
+
+  <footer>
+    <p>© 2025 - Audiobook | Produção Gráfica</p>
+  </footer>
+
   <script src="script.js"></script>
+
 </body>
 </html>
