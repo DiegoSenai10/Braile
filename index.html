@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Audiobook Acessível</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="audiobook-container" role="main">
+    <h1 tabindex="0">Audiobook Acessível</h1>
+    <audio id="audio" src="musica.mp3" aria-label="Leitura do texto com áudio"></audio>
+    
+    <div class="controls">
+      <button id="playPause" aria-label="Tocar ou pausar o áudio">▶️</button>
+      <input type="range" id="progress" min="0" max="100" value="0" aria-label="Progresso do áudio">
+      <span id="currentTime" aria-label="Tempo atual">0:00</span> / 
+      <span id="duration" aria-label="Duração total">0:00</span>
+    </div>
+
+    <div class="extra-controls">
+      <label for="speedSelect">Velocidade:</label>
+      <select id="speedSelect" aria-label="Selecionar velocidade de reprodução">
+        <option value="0.75">0.75x</option>
+        <option value="1" selected>1x</option>
+        <option value="1.25">1.25x</option>
+        <option value="1.5">1.5x</option>
+      </select>
+    </div>
+
+    <div class="text-box" id="textContent" tabindex="0" aria-live="polite">
+      <em>Texto narrado será exibido aqui...</em>
+    </div>
+
+    <button id="showTranscript" aria-expanded="false" aria-controls="fullTranscript">
+      📄 Ver transcrição completa
+    </button>
+
+    <section class="transcript" id="fullTranscript" hidden tabindex="0">
+      <p>Pelo amor de Deus...</p>
+      <p>Não faz isso comigo não...</p>
+      <p>Não tira eu do grupo...</p>
+      <p>Não faz um grupo sem eu não...</p>
+      <p>(barulhos de choro)</p>
+      <p>Eu carrego...</p>
+      <p>(mais choro)</p>
+      <p>Eu amo esse grupo!</p>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
