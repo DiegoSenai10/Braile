@@ -51,24 +51,12 @@ main {
   font-size: 1.2rem;
   text-align: center;
   min-height: 100px;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
 }
 
-#showTranscript {
-  margin-top: 1.5rem;
-  background-color: var(--primary-color);
-  color: var(--accent-color);
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 1rem;
-}
-
-#fullTranscript {
-  margin-top: 2rem;
-  background: #e9ecef;
-  padding: 1rem;
-  border-radius: 8px;
+#textContent.fade-in {
+  opacity: 1;
 }
 
 footer {
