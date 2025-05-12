@@ -42,6 +42,10 @@ audio.addEventListener('timeupdate', () => {
   currentTimeSpan.textContent = formatTime(audio.currentTime);
 
   if (currentLine < lines.length && audio.currentTime >= lines[currentLine].time) {
+    textBox.classList.add('fade-in');
+    setTimeout(() => {
+      textBox.classList.remove('fade-in');
+    }, 2500);
     textBox.textContent = lines[currentLine].text;
     currentLine++;
   }
@@ -53,19 +57,7 @@ progressBar.addEventListener('input', () => {
 
 speedSelect.addEventListener('change', () => {
   audio.playbackRate = parseFloat(speedSelect.value);
-});
-
-showTranscriptBtn.addEventListener('click', () => {
-  const isHidden = transcriptSection.hasAttribute('hidden');
-  if (isHidden) {
-    transcriptSection.removeAttribute('hidden');
-    showTranscriptBtn.setAttribute('aria-expanded', 'true');
-    showTranscriptBtn.textContent = '📄 Ocultar transcrição';
-  } else {
-    transcriptSection.setAttribute('hidden', '');
-    showTranscriptBtn.setAttribute('aria-expanded', 'false');
-    showTranscriptBtn.textContent = '📄 Ver transcrição completa';
-  }
+  speedSelect.setAttribute('aria-label', `Velocidade: ${speedSelect.value}x`);
 });
 
 function formatTime(seconds) {
